@@ -1,4 +1,4 @@
-<h1 align="center">Quiz Answer Validator</h1>
+# Quiz Answer Validator
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ehenon/quiz-answer-validator/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/quiz-answer-validator.svg?style=flat)](https://www.npmjs.com/package/quiz-answer-validator) [![Quality gate](https://github.com/ehenon/quiz-answer-validator/actions/workflows/quality-gate.yml/badge.svg?branch=main)](https://github.com/ehenon/quiz-answer-validator/actions/workflows/quality-gate.yml) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
 
