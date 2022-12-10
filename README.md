@@ -1,8 +1,8 @@
-# Quiz Answer Validator &middot; [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ehenon/quiz-answer-validator/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/quiz-answer-validator.svg?style=flat)](https://www.npmjs.com/package/quiz-answer-validator) [![Quality gate](https://github.com/ehenon/quiz-answer-validator/actions/workflows/quality-gate.yml/badge.svg?branch=main)](https://github.com/ehenon/quiz-answer-validator/actions/workflows/quality-gate.yml) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
+<h1 align="center">Quiz Answer Validator</h1>
 
-This project exposes a Node.js library allowing to check if an answer given by a player to a quiz question is correct or not.
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ehenon/quiz-answer-validator/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/quiz-answer-validator.svg?style=flat)](https://www.npmjs.com/package/quiz-answer-validator) [![Quality gate](https://github.com/ehenon/quiz-answer-validator/actions/workflows/quality-gate.yml/badge.svg?branch=main)](https://github.com/ehenon/quiz-answer-validator/actions/workflows/quality-gate.yml) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request)
 
-To validate or invalidate the answer, the library relies on a list of valid acceptable answers and on a set of algorithmic rules detailed in a dedicated section below.
+This project exposes a Node.js library allowing to check if an answer given by a player to a quiz question is correct or not. To validate or invalidate the answer, the library relies on a list of valid acceptable answers and on a set of algorithmic rules detailed in a dedicated section below.
 
 ## Usage
 
