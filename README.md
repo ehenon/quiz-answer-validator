@@ -26,6 +26,7 @@ Usage:
 
 - 1st param `{string}` - `inputAnswer`: Player's input answer to be checked
 - 2nd param `{string[]}` - `acceptableAnswers`: Array of acceptable answers
+- 3rd param `number` - `[maxTypoRate=0.15]`: Maximum tolerated typo rate between 0 and 1 (default 0.15)
 
 ```
 answerIsValid('Herve Matoux', ['Hervé Mathoux', 'Mathoux']);          // true
@@ -50,9 +51,9 @@ answerIsValid('10.000.0000', ['10.000.000']);                         // false
 - replacing ligatures;
 - finally keeping only alphanumeric characters.
 
-Checking the typo rate:
+Checking the maximum tolerated typo rate:
 - using [Sørensen–Dice coefficient](https://en.wikipedia.org/wiki/S%C3%B8rensen%E2%80%93Dice_coefficient);
-- invalidating the player's answer if the rate is less than 85% of the closest acceptable answer.
+- invalidating the player's answer if the rate is greater than 15% (optionally customizable), relative to the closest acceptable answer.
 
 Particular case:
 - if an expected answer contains only digits, no typos should be allowed, so the typo rate is not calculated.
