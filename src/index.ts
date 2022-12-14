@@ -48,9 +48,14 @@ function getSørensenDiceCoefficientBetween(first: string, second: string): numb
  * Check whether an incoming answer is valid or not, based on an array of acceptable answers.
  * @param {string} inputAnswer - Input answer to be checked.
  * @param {string[]} acceptableAnswers - Array of acceptable answers.
+ * @param {number} [maxTypoRate=0.15] - Maximum tolerated typo rate between 0 and 1 (default 0.15).
  * @returns {boolean} True if the input answer is valid, false otherwise.
  */
-export default function answerIsValid(inputAnswer: string, acceptableAnswers: string[]): boolean {
+export default function answerIsValid(
+  inputAnswer: string,
+  acceptableAnswers: string[],
+  maxTypoRate = 0.15,
+): boolean {
   const purifiedInputAnswer: string = getPurifiedStringFrom(inputAnswer);
   const purifiedValidAnswers: string[] = acceptableAnswers.map(
     (answer) => getPurifiedStringFrom(answer),
@@ -67,7 +72,7 @@ export default function answerIsValid(inputAnswer: string, acceptableAnswers: st
   );
   const maxSimilarity = Math.max(...similarityCoefficients);
 
-  if (maxSimilarity < 0.85) {
+  if (maxSimilarity <= 1 - maxTypoRate) {
     return false;
   }
 
