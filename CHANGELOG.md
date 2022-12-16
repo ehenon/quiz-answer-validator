@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/ehenon/quiz-answer-validator/compare/v1.1.0...v1.1.1) (2022-12-16)
+
+
+### Bug Fixes
+
+* **#3:** miscalculation on tolerated typo rate 🐛 ([98d6cf8](https://github.com/ehenon/quiz-answer-validator/commit/98d6cf8e538a04c6f11a41207898be042767cb4a)), closes [#3](https://github.com/ehenon/quiz-answer-validator/issues/3)
+
 # [1.1.0](https://github.com/ehenon/quiz-answer-validator/compare/v1.0.0...v1.1.0) (2022-12-14)
 
 
