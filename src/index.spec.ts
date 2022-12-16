@@ -1,7 +1,7 @@
 import answerIsValid from './index';
 
 describe('answerIsValid()', () => {
-  test('Correct answers', () => {
+  test('Correct answers with default typo rate', () => {
     const testData = [
       { inputAnswer: 'The Big Lebowski', acceptableAnswers: ['The Big Lebowski'] },
       { inputAnswer: '1.200.000', acceptableAnswers: ['1.200.000'] },
@@ -14,7 +14,7 @@ describe('answerIsValid()', () => {
     });
   });
 
-  test('Wrong answers', () => {
+  test('Wrong answers with default typo rate', () => {
     const testData = [
       { inputAnswer: 'a', acceptableAnswers: ['b'] },
       { inputAnswer: 'The Godfather', acceptableAnswers: ['The Big Lebowski'] },
@@ -26,5 +26,12 @@ describe('answerIsValid()', () => {
     testData.forEach((td) => {
       expect(answerIsValid(td.inputAnswer, td.acceptableAnswers)).toBe(false);
     });
+  });
+
+  test('Custom typo rates', () => {
+    expect(answerIsValid('The Big Lebowski', ['The Big Lebowski'], 0)).toBe(true);
+    expect(answerIsValid('The Big Lebowskii', ['The Big Lebowski'], 0)).toBe(false);
+    expect(answerIsValid('The Big Lebowsk', ['The Big Lebowski'], 0)).toBe(false);
+    expect(answerIsValid('bi lebow', ['The Big Lebowski'], 0.9)).toBe(true);
   });
 });

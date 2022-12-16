@@ -29,6 +29,8 @@ Usage:
 - 3rd param `number` - `[maxTypoRate=0.15]`: Maximum tolerated typo rate between 0 and 1 (default 0.15)
 
 ```
+// With default typo rate
+
 answerIsValid('Herve Matoux', ['Hervé Mathoux', 'Mathoux']);          // true
 answerIsValid('mathou', ['Hervé Mathoux', 'Mathoux']);                // true
 answerIsValid('Hervais Mattou', ['Hervé Mathoux', 'Mathoux']);        // false
@@ -41,6 +43,14 @@ answerIsValid('10000000', ['10.000.000']);                            // true
 answerIsValid('10,000.000', ['10.000.000']);                          // true
 answerIsValid('10.000.000', ['10000000']);                            // true
 answerIsValid('10.000.0000', ['10.000.000']);                         // false
+
+
+// With custom typo rate
+
+answerIsValid('The Big Lebowski', ['The Big Lebowski'], 0);           // true
+answerIsValid('The Big Lebowskii', ['The Big Lebowski'], 0);          // false
+answerIsValid('The Big Lebowsk', ['The Big Lebowski'], 0);            // false
+answerIsValid('bi lebow', ['The Big Lebowski'], 0.9);                 // true
 ```
 
 ## Algorithmic rules

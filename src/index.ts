@@ -72,7 +72,7 @@ export default function answerIsValid(
   );
   const maxSimilarity = Math.max(...similarityCoefficients);
 
-  if (maxSimilarity <= 1 - maxTypoRate) {
+  if (maxSimilarity < 1 - maxTypoRate) {
     return false;
   }
 
