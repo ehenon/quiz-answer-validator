@@ -34,4 +34,8 @@ describe('answerIsValid()', () => {
     expect(answerIsValid('The Big Lebowsk', ['The Big Lebowski'], 0)).toBe(false);
     expect(answerIsValid('bi lebow', ['The Big Lebowski'], 0.9)).toBe(true);
   });
+
+  test('Cheat with letter added to a number', () => {
+    expect(answerIsValid('10.000.000.00a', ['10.000.000.000'])).toBe(false);
+  });
 });

@@ -67,9 +67,9 @@ export default function answerIsValid(
     return purifiedValidAnswers.includes(purifiedInputAnswer);
   }
 
-  const similarityCoefficients: number[] = purifiedValidAnswers.map(
-    (answer) => getSørensenDiceCoefficientBetween(answer, purifiedInputAnswer),
-  );
+  const similarityCoefficients: number[] = purifiedValidAnswers
+    .filter((answer) => /^\d+$/.test(answer) === false)
+    .map((answer) => getSørensenDiceCoefficientBetween(answer, purifiedInputAnswer));
   const maxSimilarity = Math.max(...similarityCoefficients);
 
   if (maxSimilarity < 1 - maxTypoRate) {
