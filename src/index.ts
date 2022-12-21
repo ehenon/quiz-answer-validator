@@ -1,7 +1,16 @@
 /**
+ * Check if a string passed as parameter contains only digits.
+ * @param {string} input - String to be checked.
+ * @returns {boolean} True if the input string contains only digits, false otherwise.
+ */
+function containsOnlyDigits(input: string): boolean {
+  return /^\d+$/.test(input);
+}
+
+/**
  * Get a "purified" string from an input by replacing capital letters,
  * diacritics, ligatures and finally keeping only alphanumeric characters.
- * @param input - Character string to be "purified".
+ * @param {string} input - String to be "purified".
  * @returns {string} "Purified" string.
  */
 function getPurifiedStringFrom(input: string): string {
@@ -61,15 +70,15 @@ export default function answerIsValid(
     (answer) => getPurifiedStringFrom(answer),
   );
 
-  if (/^\d+$/.test(purifiedInputAnswer)) {
+  if (containsOnlyDigits(purifiedInputAnswer)) {
     /* If the purified input answer contains only digits, it is considered
     valid only if an exact match exists in the purified valid answers */
     return purifiedValidAnswers.includes(purifiedInputAnswer);
   }
 
-  const similarityCoefficients: number[] = purifiedValidAnswers.map(
-    (answer) => getSørensenDiceCoefficientBetween(answer, purifiedInputAnswer),
-  );
+  const similarityCoefficients: number[] = purifiedValidAnswers
+    .filter((answer) => !containsOnlyDigits(answer))
+    .map((answer) => getSørensenDiceCoefficientBetween(answer, purifiedInputAnswer));
   const maxSimilarity = Math.max(...similarityCoefficients);
 
   if (maxSimilarity < 1 - maxTypoRate) {
