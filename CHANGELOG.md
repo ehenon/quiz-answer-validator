@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/ehenon/quiz-answer-validator/compare/v1.1.1...v1.1.2) (2022-12-21)
+
+
+### Bug Fixes
+
+* **#5:** possible cheat on digit answers 🐛 ([88af404](https://github.com/ehenon/quiz-answer-validator/commit/88af404c0c7af77a2c953bfb896042f0e2a5776b)), closes [#5](https://github.com/ehenon/quiz-answer-validator/issues/5)
+
 ## [1.1.1](https://github.com/ehenon/quiz-answer-validator/compare/v1.1.0...v1.1.1) (2022-12-16)
 
 

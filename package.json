@@ -1,6 +1,6 @@
 {
   "name": "quiz-answer-validator",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Quiz Answer Validator Node.js library",
   "exports": {
     ".": {
